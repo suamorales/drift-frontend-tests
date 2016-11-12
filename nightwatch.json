@@ -1,0 +1,34 @@
+{
+  "src_folders": ["tests"],
+  "output_folder": "reports",
+  "custom_commands_path": "",
+  "custom_assertions_path": "",
+  "page_objects_path": "pages",
+  "globals_path": "globals",
+
+  "selenium": {
+    "start_process": true,
+    "server_path": "./selenium-server-standalone-2.53.1.jar",
+    "log_path": "./reports",
+    "selenium_host"  : "hub",
+    "cli_args": {
+      "webdriver.chrome.driver": "./chromedriver"
+    }
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "https://dashboard.syncano.io",
+      "selenium_host": "localhost",
+      "silent": true,
+      "screenshots": {
+        "enabled": false,
+        "path": ""
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}
