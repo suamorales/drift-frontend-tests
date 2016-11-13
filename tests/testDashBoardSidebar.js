@@ -1,12 +1,18 @@
 export default {
+  before(client) {
+      const loginPage = client.page.loginPage();
+
+      loginPage
+      .navigate()
+      .login(process.env.EMAIL, process.env.PASSWORD);
+    },
+    after(client) {
+      client.end();
+  },
+  
   'User Clicks on Dashboard Tabs': (client) => {
-    const loginPage = client.page.loginPage();
     const dashboardPage = client.page.dashboardPage();
     const sidebar = dashboardPage.section.sidebar;
-
-    loginPage
-      .navigate('https://start.drift.com')
-      .login("morales.sua@gmail.com", "driftdrift");
 
     dashboardPage.expect.section('@sidebar').to.be.visible.before(10000);
 
@@ -36,9 +42,7 @@ export default {
     sidebar.expect.element('@agentStatusContainer').to.be.visible;
 
     sidebar.click('@agentStatusContainer');
-    client.expect.element('@agentStatusDropdown').to.be.visible;
+    dashboardPage.expect.section('@agentStatusDropdown').to.be.visible;
 
-
-    client.end();
   }
 };

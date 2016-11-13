@@ -44,11 +44,11 @@ export default {
         },
         agentStatusContainer: {
           selector: '#app > div > div.AppContainer---haZ5V > div.Sidebar---31fWA > div.AgentStatusContainer---1YfM4',
-          agentStatusDropdown: {
-            selector: 'body > div.tether-element.tether-enabled.tether-element-attached-bottom.tether-element-attached-left.tether-target-attached-bottom.tether-target-attached-right'
-          }
         }
       }
+    },
+    agentStatusDropdown: {
+      selector: 'body > div.tether-element.tether-enabled.tether-element-attached-bottom.tether-element-attached-left.tether-target-attached-bottom.tether-target-attached-right'
     },
     openConversationsCard: {
       selector: '#app > div > div.AppContainer---haZ5V > div.App---3HNzd > div.Dashboard---XWFFT > div > div:nth-child(1)',
